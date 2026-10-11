@@ -1,0 +1,292 @@
+{
+  "schema": "pv-replication-contract-v1",
+  "source": {
+    "path": "source.mp4",
+    "sha256": null,
+    "fps_num": 24,
+    "fps_den": 1,
+    "total_frames": 36
+  },
+  "interval": [
+    0,
+    36
+  ],
+  "owners": [
+    {
+      "id": "actor",
+      "regions": [
+        "actor.head",
+        "actor.body"
+      ],
+      "method": "whole-head",
+      "deformation": "none",
+      "mask": "explicit-alpha"
+    }
+  ],
+  "assets": [
+    {
+      "id": "actor-A",
+      "path": "cel-A.png",
+      "sha256": null,
+      "object": "actor",
+      "owners": [
+        "actor"
+      ],
+      "approved": false,
+      "geometry_lock": "shared knees/ankles/shoe-tip anchors and whole-head transform"
+    },
+    {
+      "id": "actor-B",
+      "path": "cel-B.png",
+      "sha256": null,
+      "object": "actor",
+      "owners": [
+        "actor"
+      ],
+      "approved": false,
+      "geometry_lock": "shared knees/ankles/shoe-tip anchors and whole-head transform"
+    }
+  ],
+  "source_events": [
+    {
+      "id": "before",
+      "interval": [
+        0,
+        12
+      ],
+      "requirements": [
+        {
+          "object": "actor",
+          "pose": "hold-cup",
+          "expression": "worried-closed-mouth",
+          "motion_parts": [
+            "hair",
+            "sleeve"
+          ],
+          "phases": [
+            "A",
+            "B"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "effect",
+      "interval": [
+        12,
+        36
+      ],
+      "requirements": [
+        {
+          "object": "actor",
+          "pose": "hold-cup",
+          "expression": "worried-closed-mouth",
+          "motion_parts": [
+            "hair",
+            "sleeve"
+          ],
+          "phases": [
+            "A",
+            "B"
+          ]
+        }
+      ]
+    }
+  ],
+  "states": [
+    {
+      "id": "before",
+      "interval": [
+        0,
+        12
+      ],
+      "source_event_id": "before",
+      "drawings": [
+        {
+          "asset_id": "actor-A",
+          "phase": "A",
+          "object": "actor",
+          "pose": "hold-cup",
+          "expression": "worried-closed-mouth",
+          "motion_parts": [
+            "hair",
+            "sleeve"
+          ]
+        },
+        {
+          "asset_id": "actor-B",
+          "phase": "B",
+          "object": "actor",
+          "pose": "hold-cup",
+          "expression": "worried-closed-mouth",
+          "motion_parts": [
+            "hair",
+            "sleeve"
+          ]
+        }
+      ],
+      "schedule": [
+        {
+          "interval": [
+            0,
+            6
+          ],
+          "asset_id": "actor-A"
+        },
+        {
+          "interval": [
+            6,
+            12
+          ],
+          "asset_id": "actor-B"
+        }
+      ]
+    },
+    {
+      "id": "effect",
+      "interval": [
+        12,
+        36
+      ],
+      "source_event_id": "effect",
+      "drawings": [
+        {
+          "asset_id": "actor-A",
+          "phase": "A",
+          "object": "actor",
+          "pose": "hold-cup",
+          "expression": "worried-closed-mouth",
+          "motion_parts": [
+            "hair",
+            "sleeve"
+          ]
+        },
+        {
+          "asset_id": "actor-B",
+          "phase": "B",
+          "object": "actor",
+          "pose": "hold-cup",
+          "expression": "worried-closed-mouth",
+          "motion_parts": [
+            "hair",
+            "sleeve"
+          ]
+        }
+      ],
+      "schedule": [
+        {
+          "interval": [
+            12,
+            18
+          ],
+          "asset_id": "actor-A"
+        },
+        {
+          "interval": [
+            18,
+            24
+          ],
+          "asset_id": "actor-B"
+        },
+        {
+          "interval": [
+            24,
+            30
+          ],
+          "asset_id": "actor-A"
+        },
+        {
+          "interval": [
+            30,
+            36
+          ],
+          "asset_id": "actor-B"
+        }
+      ]
+    }
+  ],
+  "expected_state_order": [
+    "before",
+    "effect"
+  ],
+  "layer_order": [
+    "background",
+    "actor",
+    "smoke",
+    "lyrics"
+  ],
+  "required_layer_order": [
+    "background",
+    "actor",
+    "smoke",
+    "lyrics"
+  ],
+  "transitions": [
+    {
+      "id": "recover",
+      "interval": [
+        12,
+        36
+      ],
+      "switch_frame": 24,
+      "opaque_interval": [
+        24,
+        30
+      ],
+      "covers": [
+        "actor.head",
+        "actor.body"
+      ],
+      "changing_regions": [
+        "actor.head",
+        "actor.body"
+      ],
+      "cels": [
+        {
+          "interval": [
+            12,
+            18
+          ],
+          "full_canvas": true,
+          "clip_to_actor": false
+        },
+        {
+          "interval": [
+            18,
+            24
+          ],
+          "full_canvas": true,
+          "clip_to_actor": false
+        },
+        {
+          "interval": [
+            24,
+            30
+          ],
+          "full_canvas": true,
+          "clip_to_actor": false
+        },
+        {
+          "interval": [
+            30,
+            36
+          ],
+          "full_canvas": true,
+          "clip_to_actor": false
+        }
+      ],
+      "expected_cel_durations": [
+        6,
+        6,
+        6,
+        6
+      ]
+    }
+  ],
+  "output": {
+    "path": "output.mp4",
+    "sha256": null
+  },
+  "reviews": [],
+  "status": "draft-example-not-production-approved"
+}
