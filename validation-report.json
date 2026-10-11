@@ -1,0 +1,127 @@
+{
+  "schema": "pv-workflow-package-validation-v1",
+  "skill_quick_validate": "pass after maintenance updates; ephemeral PyYAML removed",
+  "behavioral_tests": {
+    "passed": 29,
+    "failures": 0,
+    "media_decoding_performed": false,
+    "fixture_media": "synthetic bytes; declarations/file hashes only"
+  },
+  "draft_template": {
+    "expected_exit": 1,
+    "expected_errors": [
+      "source.sha256 missing",
+      "actor-A.sha256 missing",
+      "actor-B.sha256 missing"
+    ],
+    "adopted_or_delivery_approved": false
+  },
+  "relative_markdown_links": "pass",
+  "independent_forward_test": {
+    "result": "pass after documented API limitation corrected",
+    "scenario": "two objects; 30000/1001; local hand/hair A/B; continuous integer frames; effect holds [3,4,5]",
+    "complete_fixture_passed": true,
+    "rejected_variants": 10,
+    "bundled_tests_passed": 29,
+    "actual_generation_or_playback_performed": false,
+    "finding": "contract.md incorrectly said source events may overlap; current states reference one event and require disjoint coverage",
+    "fix": "document now requires disjoint source events; concurrent objects go in one event requirements, partitioned at all state boundaries",
+    "temporary_fixture_cleanup": "done"
+  },
+  "contains_media": false,
+  "limits": [
+    "contract validation does not prove anatomy, actual opacity, real source motions, or actual watching",
+    "recovery inventory checker does not probe media or execute restoration; full isolated restoration not run",
+    "first cleanup figures describe only the recorded first pass; old cold-cache and packager entrypoints are not immediately runnable"
+  ],
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1065,
+      "sha256": "c3ed5f8398f14dccf96427db37d08274a4c633f71ef5790df377be33f1fb2853"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1839,
+      "sha256": "c8c74f1c4962d17e377baf0e2c01be6564129d0c43a2c3766368fbedd3db37a9"
+    },
+    {
+      "path": "docs/如何更高效地实现PV复刻.md",
+      "bytes": 11113,
+      "sha256": "842178d03989fbbd014d34f1f0b430a54318196c418c68ca371bcb77c9ebfd35"
+    },
+    {
+      "path": "docs/恢复与清理.md",
+      "bytes": 7095,
+      "sha256": "0e2a76811bdff63fe83fa4166b8c0e1eb39a2863c6295ca18afaecc54d8e2a25"
+    },
+    {
+      "path": "docs/本次项目复盘.md",
+      "bytes": 9741,
+      "sha256": "4e8d3a6a2a33d13c6e51c6d884223715009bf73a8a8bc468714c5e281d5d1712"
+    },
+    {
+      "path": "skill/pv-replication/SKILL.md",
+      "bytes": 5227,
+      "sha256": "80e4f70d46abcd6fdfb64e2ed26efa4318d8062f12dfeec9d091f7e42ac7c71a"
+    },
+    {
+      "path": "skill/pv-replication/references/contract-template.json",
+      "bytes": 5370,
+      "sha256": "2cb1663c27b2bfd06a181511b05c7bee9f8de0b2fd08631df312b85443350476"
+    },
+    {
+      "path": "skill/pv-replication/references/contract.md",
+      "bytes": 5184,
+      "sha256": "d3a6be355698cf82998b413b7e3395aa23802b68eda74ede74e00df9d59c31ea"
+    },
+    {
+      "path": "skill/pv-replication/scripts/test_validate_contract.py",
+      "bytes": 8529,
+      "sha256": "505919d0b72210991b69f4c9f58975bcc2654771d49e1acad4bdd51fbe7b9556"
+    },
+    {
+      "path": "skill/pv-replication/scripts/test_verify_recovery.py",
+      "bytes": 2379,
+      "sha256": "719f01eb483874064dd44f86227b20e28a81d9bc1b9e2f4a970bfc3e01219f2f"
+    },
+    {
+      "path": "skill/pv-replication/scripts/validate_contract.py",
+      "bytes": 16882,
+      "sha256": "0c5c304bcbeb2dc524194c3f0dba3111592997459d59f97a140519d0bc9ba9eb"
+    },
+    {
+      "path": "skill/pv-replication/scripts/verify_recovery.py",
+      "bytes": 4849,
+      "sha256": "f3662c59979fe0f40e41cdf84c8df05518ec197d0883ab73973288fff2baf006"
+    }
+  ],
+  "actual_recovery_inventory_check": {
+    "ok": true,
+    "errors": [],
+    "hashed_files": 190,
+    "declared_patch_frames": 189,
+    "media_parameters_probed": false,
+    "visual_quality_verified": false,
+    "restoration_executed": false,
+    "files_changed": false,
+    "input_expectations": "existing independent C and R3 mux patch hashes; V8 baseline from C mux report"
+  },
+  "recovery_inventory_tests": {
+    "passed": 6,
+    "failures": 0,
+    "actual_media_restoration_tested": false
+  },
+  "peer_retrospective_integration": {
+    "source": "docs/retrospective-peer-v11.md",
+    "status": "integrated",
+    "unfinished_discussion_statement_removed": true,
+    "corrected_limits": [
+      "V9-V11 bypassed V7/V8 export gates",
+      "videoModified:false can be stale after actual mux",
+      "V8 plus 112 C plus 77 R3 is the current minimal picture recovery inventory",
+      "old cold NPZ replay and old packager are retired until dependencies are rebuilt",
+      "workspace allocated reduction differs from df free change"
+    ]
+  }
+}
